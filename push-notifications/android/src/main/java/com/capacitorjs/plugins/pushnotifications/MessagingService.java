@@ -1,4 +1,4 @@
-package com.capacitorjs.plugins.pushnotifications;
+package ud.pushnotifications;
 
 import androidx.annotation.NonNull;
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -9,12 +9,12 @@ public class MessagingService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
-        PushNotificationsPlugin.sendRemoteMessage(remoteMessage);
+        ud.pushnotifications.PushNotificationsPlugin.sendRemoteMessage(remoteMessage);
     }
 
     @Override
     public void onNewToken(@NonNull String s) {
         super.onNewToken(s);
-        PushNotificationsPlugin.onNewToken(s);
+        ud.pushnotifications.PushNotificationsPlugin.onNewToken(s);
     }
 }
