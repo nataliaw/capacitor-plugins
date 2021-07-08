@@ -1,4 +1,4 @@
-package com.capacitorjs.plugins.pushnotifications;
+package ud.pushnotifications;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
