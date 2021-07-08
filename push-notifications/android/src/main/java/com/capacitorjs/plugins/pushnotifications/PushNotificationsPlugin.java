@@ -1,4 +1,4 @@
-package com.capacitorjs.plugins.pushnotifications;
+package ud.pushnotifications;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -34,15 +34,15 @@ public class PushNotificationsPlugin extends Plugin {
     public static Bridge staticBridge = null;
     public static RemoteMessage lastMessage = null;
     public NotificationManager notificationManager;
-    public MessagingService firebaseMessagingService;
-    private NotificationChannelManager notificationChannelManager;
+    public ud.pushnotifications.MessagingService firebaseMessagingService;
+    private ud.pushnotifications.NotificationChannelManager notificationChannelManager;
 
     private static final String EVENT_TOKEN_CHANGE = "registration";
     private static final String EVENT_TOKEN_ERROR = "registrationError";
 
     public void load() {
         notificationManager = (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
-        firebaseMessagingService = new MessagingService();
+        firebaseMessagingService = new ud.pushnotifications.MessagingService();
 
         staticBridge = this.bridge;
         if (lastMessage != null) {
@@ -50,7 +50,7 @@ public class PushNotificationsPlugin extends Plugin {
             lastMessage = null;
         }
 
-        notificationChannelManager = new NotificationChannelManager(getActivity(), notificationManager);
+        notificationChannelManager = new ud.pushnotifications.NotificationChannelManager(getActivity(), notificationManager);
     }
 
     @Override
